@@ -1,0 +1,10 @@
+
+
+<app-film-card
+*ngIf="film$ | async as film; else empty"
+[film]="film"
+>
+</app-film-card>
+<ng-template #empty>
+<app-loading></app-loading>
+</ng-template> 

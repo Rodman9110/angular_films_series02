@@ -1,0 +1,28 @@
+
+
+
+<h1>{{film.name}}</h1>
+  <hr>
+  <mat-grid-list cols="4" rowHeight="700px">
+        <mat-grid-tile        
+            [colspan]="1"
+            [rowspan]="1"
+            >
+            <img mat-card-image src="assets/img/{{film.poster_film}}" alt="Photo of a Shiba Inu">
+        </mat-grid-tile>
+        <mat-grid-tile        
+            [colspan]="3"
+            [rowspan]="1"
+            >              
+            <mat-card class="description">{{film.description}}</mat-card> 
+    </mat-grid-tile>  
+    </mat-grid-list>
+
+    <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile        
+            [colspan]="1"
+            [rowspan]="1"
+            >        
+            <mat-card>Premiere: {{film.data_premiere}}</mat-card>       
+        </mat-grid-tile>
+    </mat-grid-list>

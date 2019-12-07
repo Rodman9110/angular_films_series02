@@ -1,1 +1,25 @@
-<p>films-list works!</p>
+<!-- <p>films-list works!</p>
+
+<div *ngFor="let film of films">
+    <p>{{film.name}}</p>
+</div> -->
+
+<mat-grid-list cols="4" rowHeight="1:2">
+    <mat-grid-tile *ngFor="let film of films">
+      <mat-card class="example-card" >
+        <mat-card-header>
+          <mat-card-title>{{film.name}}</mat-card-title>
+          <mat-card-subtitle>{{film.classification}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets/img/{{film.poster_film}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="example-button-row">
+         <button  mat-raised-button color="primary" [routerLink]="['/films',film.id]">Detais</button>
+        </mat-card-actions>
+      </mat-card> 
+    </mat-grid-tile>    
+  </mat-grid-list> 

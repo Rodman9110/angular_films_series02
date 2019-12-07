@@ -1,10 +1,12 @@
-<p>films works!</p>
+
 
 <app-films-list
+*ngIf="films$ | async as films; else empty"
+[films]="films"
 >
 </app-films-list>
 
 
-<!-- <ng-template #empty>
+ <ng-template #empty>
     <app-loading></app-loading>
-</ng-template> -->
+</ng-template> 

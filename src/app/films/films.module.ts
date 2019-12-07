@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FilmsRoutingModule } from './films-routing.module';
 import { FilmsComponent } from './films.component';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     FilmsRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class FilmsModule { }

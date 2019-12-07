@@ -4,17 +4,26 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
 import { FilmsListComponent } from './films-list/films-list.component';
 import { SeriesListComponent } from './series-list/series-list.component';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card'
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent],
   imports: [
     CommonModule,
     RouterModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatTabsModule
   ],
-  exports: [FilmsListComponent, SeriesListComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent]
 })
 export class SharedModule { }
