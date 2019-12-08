@@ -1,3 +1,9 @@
-<app-filter>
-    
+<app-filter
+ *ngIf=" genres$ | async as genres; else empty"
+ [genres] ="genres"
+>
 </app-filter>
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 
