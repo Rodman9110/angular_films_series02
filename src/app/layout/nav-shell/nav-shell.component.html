@@ -5,10 +5,11 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink=''>Home</a>
-      <a mat-list-item routerLink='films'>Films</a>
-      <a mat-list-item routerLink="series">Series</a>
-      <a mat-list-item routerLink="search">Search</a>
+      <a mat-list-item routerLink=''><mat-icon aria-hidden="false" aria-label="">home</mat-icon> Home</a>
+      <a mat-list-item routerLink='films'><mat-icon aria-hidden="false" aria-label="">movie</mat-icon> Films</a>
+      <a mat-list-item routerLink="series"> <mat-icon aria-hidden="false" aria-label="">local_movies</mat-icon> Series</a>
+      <a mat-list-item routerLink="search"> <mat-icon aria-hidden="false" aria-label="">youtube_searched_for</mat-icon> Search</a>
+      <a mat-list-item routerLink="foro"> <mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon> Foro</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,6 +22,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+      <img src="assets/img/tv.png" width="60" height="60" alt="">
       <span>{{title}}</span>
     </mat-toolbar>
     <router-outlet></router-outlet>

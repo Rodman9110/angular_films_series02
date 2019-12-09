@@ -11,6 +11,7 @@ export class FilmCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.film);
   }
 
 }

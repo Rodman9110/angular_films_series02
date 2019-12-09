@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({

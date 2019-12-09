@@ -1,6 +1,4 @@
 
-
-
 <h1>{{film.name}}</h1>
   <hr>
   <mat-grid-list cols="4" rowHeight="700px">
@@ -23,6 +21,7 @@
             [colspan]="1"
             [rowspan]="1"
             >        
-            <mat-card>Premiere: {{film.data_premiere}}</mat-card>       
+            <mat-card>Premiere: {{film.date_premiere}}</mat-card>       
+            <mat-card>Genero: film.genres.name</mat-card>    
         </mat-grid-tile>
     </mat-grid-list>

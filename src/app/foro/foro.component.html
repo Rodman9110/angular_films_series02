@@ -1,0 +1,14 @@
+
+
+
+
+
+<app-comment-list
+*ngIf="comments$ | async as comments; else empty"
+[comments]= "comments"
+>
+</app-comment-list>
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template>  
