@@ -10,22 +10,22 @@
   </mat-select>
 </mat-form-field>
 
-<!-- <mat-form-field>
-  <mat-label>Leading Type</mat-label>
-  <mat-select  formControlName="leadingType">
-    <mat-option *ngFor="let option of leadingType"value="{{option.id}}">{{option.value}}</mat-option>
+ <mat-form-field>
+  <mat-label>Classification</mat-label>
+  <mat-select  formControlName="classification">
+    <mat-option *ngFor="let option of classification"value="{{option.id}}">{{option.name}}</mat-option>
   </mat-select>
 </mat-form-field>
 
 
-<mat-form-field>
+<!-- <mat-form-field>
   <mat-label>Regions</mat-label>
   <mat-select  formControlName="regions">
     <mat-option *ngFor="let option of regions" [value]="option.code">
       {{option.name}}
     </mat-option>
   </mat-select>
-</mat-form-field> -->
+</mat-form-field>  -->
   <br>
 <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()">Search</button>
 <button mat-raised-button color="warn" type="button" (click)="onReset()">Reset</button>

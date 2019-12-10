@@ -8,7 +8,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-
+  @Input() classification;
   @Input() genres;
   @Output() search = new EventEmitter<any>();
   constructor(private formBuilder:FormBuilder) { }
@@ -17,7 +17,8 @@ export class FilterComponent implements OnInit {
   }
 
   searchForm = this.formBuilder.group({
-    genres: []
+    genres: [],
+    classification:[]
   })
 
 }

@@ -1,6 +1,8 @@
 <app-filter
  *ngIf=" genres$ | async as genres; else empty"
- [genres] ="genres"
+ [genres] = "genres"
+ [classification] = "classification$ | async "
+
 >
 </app-filter>
 

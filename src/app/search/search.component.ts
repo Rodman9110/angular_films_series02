@@ -10,10 +10,12 @@ import { Observable } from 'rxjs';
 export class SearchComponent implements OnInit {
 
   genres$: Observable<any[]>;
+  classification$: Observable<any[]>;
   constructor(private searchServices: SearchService) { }
 
   ngOnInit() {
     this.genres$ = this.searchServices.getAllGenres$();
+    this.classification$ = this.searchServices.getAllClassification$();
   }
 
 }

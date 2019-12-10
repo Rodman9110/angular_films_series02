@@ -10,13 +10,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { LoadingComponent } from './loading/loading.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
+import { GenresComponent } from './genres/genres.component';
 
 
 
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -26,6 +27,6 @@ import { CommentListComponent } from './comment-list/comment-list.component';
     MatButtonModule,
     MatTabsModule
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent]
 })
 export class SharedModule { }

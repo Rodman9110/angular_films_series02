@@ -22,6 +22,12 @@
             [rowspan]="1"
             >        
             <mat-card>Premiere: {{film.date_premiere}}</mat-card>       
-            <mat-card>Genero: film.genres.name</mat-card>    
+            <mat-card>Genero: {{film.genres| json }}  ,{{film.genres}}</mat-card>    
         </mat-grid-tile>
     </mat-grid-list>
+
+
+     <!-- <app-genres
+     [genres]="film.genres | async "
+     >
+    </app-genres>   -->
