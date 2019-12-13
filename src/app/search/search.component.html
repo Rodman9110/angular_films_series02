@@ -2,10 +2,16 @@
  *ngIf=" genres$ | async as genres; else empty"
  [genres] = "genres"
  [classification] = "classification$ | async "
-
+ (search)="getSearch($event)"
 >
 </app-filter>
 
-<ng-template #empty>
+<app-films-list
+*ngIf= " films$ | async as films; else empty"
+[films] = "films"
+>
+</app-films-list>
+
+<!-- <ng-template #empty>
     <app-loading></app-loading>
-</ng-template> 
+</ng-template>  -->

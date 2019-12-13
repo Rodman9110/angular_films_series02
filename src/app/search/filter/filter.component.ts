@@ -20,5 +20,9 @@ export class FilterComponent implements OnInit {
     genres: [],
     classification:[]
   })
+  onSubmit(){
+    console.log(this.searchForm.value);
+    this.search.emit(this.searchForm.value);
+  }
 
 }
