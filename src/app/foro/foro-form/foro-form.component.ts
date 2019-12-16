@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, Validators , FormControl, FormGroup } from '@angular/forms';
+import { CommentService } from 'src/app/services/comment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-foro-form',
@@ -8,15 +10,28 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ForoFormComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  public foroForm: FormGroup;
 
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder, private commentService: CommentService, private router: Router) { 
+
+    this.foroForm = this.formBuilder.group({
+      name:['', Validators.required],
+      text:['', Validators.required] 
+    });
   }
 
-  foroForm = this.formBuilder.group({
-    name:[null,[Validators.required , Validators.required]],
-    text:[null,[Validators.required , Validators.maxLength(10)]]
-
-  })
-
+  ngOnInit() {
+   
+  } 
+  
+  ClickSaveComment(){ 
+    
+    console.log(this.foroForm.value);   
+     this.commentService.postComment$(this.foroForm.value)
+     .subscribe(data => {
+        // alert("Employee created successfully.");
+         this.router.navigate(["/films"]);
+      });    
+    
+  }
 }

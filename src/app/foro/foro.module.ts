@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { CommentCardComponent } from './comment-card/comment-card.component';
 import { ForoFormComponent } from './foro-form/foro-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -25,7 +25,9 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
+    
   ]
 })
 export class ForoModule { }

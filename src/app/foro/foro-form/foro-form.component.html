@@ -1,23 +1,47 @@
-<!-- <p>foro-form works!</p> -->
-<form [formGroup]="foroFrom" novalidate> 
+
+ 
+
+<form id="contactForm" [formGroup]="foroForm"  novalidate (ngSubmit)="ClickSaveComment()"> 
+    <mat-card-title>Foro </mat-card-title>
+<mat-form-field>
+    <input matInput  placeholder="name" formControlName="name" class="form-control"  name="name">
+</mat-form-field>  
+<br>
+<mat-form-field>
+    <textarea rows="4" cols="50" matInput placeholder="text" formControlName="text" class="form-control"  name="text"></textarea>
+</mat-form-field>         
+ <br>
+<button       
+id="btnSubmit"
+mat-raised-button 
+color="primary"     
+type="submit"
+>
+Send</button>
+
+</form> 
+
+<!-- <form [formGroup]="foroForm" novalidate> 
     <mat-card class="shipping-card">
         <mat-card-header>
-            <mat-card-title>Add a new task</mat-card-title>
+            <mat-card-title>Foro </mat-card-title>
         </mat-card-header>
         <mat-card-content>
            <div class="row">
                <div class="col">
-                    <input
-                    matInput
-                    placeholder="Name"
-                    formControlName="name"
-                    >
-                    <!-- <mat-error
-                    *ngIf="ForoFrom.controls['name'].hasError('required')"
-                    >Error Name</mat-error> -->
+                <input matInput placeholder="name" formControlName="name" class="form-control"  name="name">
+                   
                </div>
            </div>
         </mat-card-content>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <textarea rows="4" cols="50" matInput placeholder="text" formControlName="text" class="form-control"  name="text"></textarea>
+                     
+                </div>
+            </div>
+         </mat-card-content>
         <mat-card-actions>
             <button
             mat-raised-button 
@@ -26,9 +50,7 @@
             type="submit"
             >
             Send</button>  
+            
         </mat-card-actions>    
     </mat-card>
-</form>
-
-
-
+</form> -->
