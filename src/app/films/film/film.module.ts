@@ -9,6 +9,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatGridListModule,
     MatButtonModule,
     MatTabsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class FilmModule { }

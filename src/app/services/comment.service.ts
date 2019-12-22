@@ -8,6 +8,9 @@ export class CommentService {
 
   URL_COMMENTS = 'http://localhost:8081/api/comments';
   URL_COMMENTS_ADD = 'http://localhost:8081/api';
+  URL_COMMENTS_FILM = 'http://localhost:8081/api/commentsFilm';
+  URL_COMMENTS_FILM_ADD = 'http://localhost:8081/api/AddCommentsFilm';
+
   constructor(private http:HttpClient) { }
 
   getAllComments$(){
@@ -16,6 +19,17 @@ export class CommentService {
   }
   postComment$(comment: any[]){
     const url = this.URL_COMMENTS_ADD;
+    console.log(comment);
+    return this.http.post<any[]>(url,comment);
+  }
+
+  getCommentFilm$(filmId){
+    const url = this.URL_COMMENTS_FILM+"/"+filmId;
+    console.log(url);
+    return this.http.get<any[]>(url);    
+  }
+  postCommentCriticFilm$(comment: any[]){
+    const url = this.URL_COMMENTS_FILM_ADD;
     console.log(comment);
     return this.http.post<any[]>(url,comment);
   }

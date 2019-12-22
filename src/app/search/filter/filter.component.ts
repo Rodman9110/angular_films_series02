@@ -24,5 +24,9 @@ export class FilterComponent implements OnInit {
     console.log(this.searchForm.value);
     this.search.emit(this.searchForm.value);
   }
+  onReset(){
+    this.searchForm.reset();
+    // <console.log("www")>
+  }
 
 }

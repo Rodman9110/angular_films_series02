@@ -6,6 +6,13 @@
 >
 </app-film-card>
 
+<app-comment-list
+*ngIf="comments$ | async as comments"
+[comments]="comments"
+>
+</app-comment-list>
+
+
 <ng-template #empty>
 <app-loading></app-loading>
 </ng-template> 
