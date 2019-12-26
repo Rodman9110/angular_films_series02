@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'films', loadChildren: () => import('./films/films.module').then(m => m.FilmsModule) },
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
   { path: 'series', loadChildren: () => import('./series/series.module').then(m => m.SeriesModule) },
-  { path: 'foro', loadChildren: () => import('./foro/foro.module').then(m => m.ForoModule) }
+  { path: 'foro', loadChildren: () => import('./foro/foro.module').then(m => m.ForoModule) },
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) }
   ];
 
 @NgModule({

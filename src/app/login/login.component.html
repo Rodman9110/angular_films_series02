@@ -1,0 +1,11 @@
+<form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickVerificationLogin()">  
+    <input  type="text" placeholder="name" formControlName="email" class="form-control"  name="name">
+  <br>
+    <input type="password" placeholder="password" formControlName="password" class="form-control"  name="password">       
+  <br>
+  <button       
+  id="btnSubmit"      
+  type="submit"
+  >
+  Send</button>
+  </form> 
