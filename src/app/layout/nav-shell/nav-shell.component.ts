@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { UserInterface } from 'src/app/Models/User';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-shell',
@@ -19,11 +20,22 @@ export class NavShellComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver,private authentication: AuthenticationService) {}
+  constructor(
+    private router: Router,
+    private breakpointObserver: BreakpointObserver,
+    private authentication: AuthenticationService
+    ) {}
   user: UserInterface;
 
   ngOnInit() {
     this.user = this.authentication.getCurrentUser();
     console.log(this.user);
   }
+  
+  Logout(){
+   this.authentication.logoutUser();
+   this.router.navigate(["/login"])
+
+  }
+
 }

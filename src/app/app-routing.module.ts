@@ -8,7 +8,11 @@ const routes: Routes = [
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
   { path: 'series', loadChildren: () => import('./series/series.module').then(m => m.SeriesModule) },
   { path: 'foro', loadChildren: () => import('./foro/foro.module').then(m => m.ForoModule) },
-  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) }
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
+  { path: 'myfilms', loadChildren: () => import('./my-films/my-films.module').then(m => m.MyFilmsModule) },
+  { path: 'mailbox', loadChildren: () => import('./mailbox/mailbox.module').then(m => m.MailboxModule) },
+  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) }
   ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpLoginService } from '../services/http-login.service';
@@ -11,6 +11,7 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
+  @Input() error: string | null;
   public loginForm: FormGroup;
   
   constructor(
@@ -36,15 +37,20 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
     this.httpLogin.loginVerification(this.loginForm.value)
     .subscribe(data =>{
-      console.log(data);
-      this.authentication.setUser(data);
-      let token = data.id;
-      console.log(token);
-      this.authentication.setToken(token);
-      this.router.navigate(['']);
-     
+      if (data == null) {       
+        error => console.log(error)
+        this.error = "Wrong username or password."
+      }
+      else{
+        console.log(data);
+        this.authentication.setUser(data);
+        let token = data.id;
+        console.log(token);
+        this.authentication.setToken(token);
+        this.router.navigate(['']);
+      } 
     },
-    error => console.log(error)
+   
     );
 
   }

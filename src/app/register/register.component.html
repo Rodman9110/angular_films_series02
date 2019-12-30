@@ -1,20 +1,18 @@
-<!-- <form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickVerificationLogin()">  
-    <input  type="text" placeholder="name" formControlName="email" class="form-control"  name="name">
-  <br>
-    <input type="password" placeholder="password" formControlName="password" class="form-control"  name="password">       
-  <br>
-  <button       
-  id="btnSubmit"      
-  type="submit"
-  >
-  Send</button>
-  </form> 
- -->
 
-  <mat-card>
-    <mat-card-title>Login</mat-card-title>
+<mat-card>
+    <mat-card-title>Register</mat-card-title>
 <mat-card-content>
-<form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickVerificationLogin()">
+<form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickSaveRegistry()">
+  <p>
+    <mat-form-field>
+        <input matInput type="text" placeholder="First Name" formControlName="First Name" class="form-control"  name="first_name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Last Name" formControlName="First Name" class="form-control"  name="last_name">
+    </mat-form-field>
+  </p>
   <p>
     <mat-form-field>
       <input matInput type="text" placeholder="email" formControlName="email" class="form-control"  name="email">

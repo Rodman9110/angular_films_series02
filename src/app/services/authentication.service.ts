@@ -33,12 +33,13 @@ export class AuthenticationService {
       return null;
     }
   }
-  logoutUser() {
+  logoutUser(): void {
     let accessToken = localStorage.getItem("accessToken");
-    const url_api = `http://localhost:8081/api/logout?access_token=${accessToken}`;
+    // const url_api = `http://localhost:8081/api/logout?access_token=${accessToken}`;
     localStorage.removeItem("accessToken");
     localStorage.removeItem("currentUser");
-    return this.http.post<UserInterface>(url_api, { headers: this.headers });
+    // return this.http.post<UserInterface>(url_api, { headers: this.headers });
+    
   }
 
 

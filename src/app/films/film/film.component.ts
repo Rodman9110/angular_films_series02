@@ -19,16 +19,10 @@ export class FilmComponent implements OnInit {
     private filmsServices:FilmsService,
     private activatedRoute: ActivatedRoute,
     private commentServices: CommentService,
-  
     ) 
     { 
-   
     }
-
-  
-   
-  
-
+    
   ngOnInit() {
     const filmId = this.activatedRoute.snapshot.params.filmId;
     console.log(filmId);
