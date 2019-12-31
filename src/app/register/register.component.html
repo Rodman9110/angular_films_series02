@@ -2,25 +2,33 @@
 <mat-card>
     <mat-card-title>Register</mat-card-title>
 <mat-card-content>
-<form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickSaveRegistry()">
+<form id="contactForm" [formGroup]="registerForm"  novalidate (ngSubmit)="ClickSaveRegistry()">
   <p>
     <mat-form-field>
-        <input matInput type="text" placeholder="First Name" formControlName="First Name" class="form-control"  name="first_name">
+        <input matInput type="text" placeholder="First Name" formControlName="first_name" class="form-control"  name="first_name">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
-        <input matInput type="text" placeholder="Last Name" formControlName="First Name" class="form-control"  name="last_name">
+        <input matInput type="text" placeholder="Last Name" formControlName="last_name" class="form-control"  name="last_name">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
-      <input matInput type="text" placeholder="email" formControlName="email" class="form-control"  name="email">
+      <input matInput type="text" placeholder="Email" formControlName="email" class="form-control"  name="email">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
-       <input matInput type="password" placeholder="password" formControlName="password" class="form-control"  name="password">       
+       <input matInput type="password" placeholder="Password" formControlName="password" class="form-control"  name="password">       
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <mat-select  formControlName="country">
+        <mat-option *ngFor="let option of countries$ | async "  value="{{option.id}}"><p><img src="https://www.countryflags.io/{{option.code}}/shiny/32.png" alt="" class="flags"> {{option.name}}</p> </mat-option>
+      </mat-select>
     </mat-form-field>
   </p>
 

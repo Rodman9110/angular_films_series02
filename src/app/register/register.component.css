@@ -26,3 +26,8 @@
     display: flex;
     justify-content: flex-end;
   }
+
+  img {
+    margin-right: 10px;
+    
+  }
