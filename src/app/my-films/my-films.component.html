@@ -1,1 +1,9 @@
-<p>my-films works!</p>
+<h1>My favorites Films</h1>
+  <hr>
+
+
+<app-films-list
+*ngIf= " films$ | async as films; else empty"
+[films] = "films"
+>
+</app-films-list>

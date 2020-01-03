@@ -30,7 +30,9 @@ export class ForoFormComponent implements OnInit {
       id_user:[this.user.id, Validators.required],
       name:[this.user.first_name, Validators.required],
       // name:['', Validators.required],
-      text:['', Validators.required] 
+      text:['', Validators.required],
+      email:[this.user.email,Validators.required],
+      img_profile:[this.user.img_profile,Validators.required] 
     });
   }
 

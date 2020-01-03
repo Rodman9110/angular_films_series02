@@ -1,1 +1,13 @@
-<p>mailbox works!</p>
+<h1>Mailbox</h1>
+<hr>
+
+
+<app-comment-list-mailbox
+*ngIf="comments$ | async as comments; else empty"
+[comments]= "comments"
+>
+</app-comment-list-mailbox>
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template>  

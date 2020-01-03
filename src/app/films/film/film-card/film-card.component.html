@@ -33,7 +33,7 @@
     <form id="contactForm" [formGroup]="filmForm"  novalidate (ngSubmit)="ClickSaveCommentCritic()"> 
         <mat-card-title>Critics of {{film.name}} </mat-card-title>
     <mat-form-field appearance="outline" >
-        <input matInput  placeholder="id_film" formControlName="id_film" class="form-control"  name="id_film" value="{{film.id}}"  >
+        <input matInput  placeholder="id_film" formControlName="id_film" class="form-control"  name="id_film" value="{{film.id}}" required >
        
     </mat-form-field>  
     <br>

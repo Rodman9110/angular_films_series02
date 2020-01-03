@@ -23,7 +23,9 @@ export class FilmCardComponent implements OnInit {
     this.filmForm = this.formBuilder.group({
       id_film:['', Validators.required],
       name:[this.user.first_name, Validators.required],
-      text:['', Validators.required]
+      text:['', Validators.required],
+      email:[this.user.email,Validators.required],
+      img_profile:[this.user.img_profile,Validators.required] 
     });
    }
 
@@ -36,10 +38,6 @@ export class FilmCardComponent implements OnInit {
     console.log(this.filmForm.value);  
      this.commentServices.postCommentCriticFilm$(this.filmForm.value)
      .subscribe();
-
-
   }
-
-
 
 }

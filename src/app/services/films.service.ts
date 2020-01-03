@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class FilmsService {
 
   URL_FILMS = 'http://localhost:8081/api/films';
+  URL_ALL_MY_FILMS = 'http://localhost:8081/api/MyFilmsFavorites';
   headers = new HttpHeaders;
   constructor(private http: HttpClient) {
     this.headers.append("Content-Type" ,"application/json");
@@ -23,6 +24,10 @@ export class FilmsService {
     const url = this.URL_FILMS+"/"+filmId;
     console.log(url);
     return this.http.get<any>(url,{headers: this.headers});    
+  }
+  getAllMyFilms$(id_user){
+    const url =this.URL_ALL_MY_FILMS+"/"+id_user;
+    return this.http.get<any[]>(url);
   }
 
 }

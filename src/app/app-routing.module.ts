@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
   { path: 'myfilms', loadChildren: () => import('./my-films/my-films.module').then(m => m.MyFilmsModule) },
   { path: 'mailbox', loadChildren: () => import('./mailbox/mailbox.module').then(m => m.MailboxModule) },
-  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) }
+  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
+  { path: 'people', loadChildren: () => import('./people/people.module').then(m => m.PeopleModule) }
   ];
 
 @NgModule({
