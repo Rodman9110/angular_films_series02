@@ -9,9 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    
+
     // LoginComponent
 
     
@@ -24,6 +27,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }

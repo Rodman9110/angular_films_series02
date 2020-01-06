@@ -1,0 +1,22 @@
+
+
+
+<form id="contactForm" [formGroup]="mailboxForm"  novalidate (ngSubmit)="ClickSaveComment()"> 
+    
+ <mat-form-field appearance="outline">
+    <input matInput  placeholder="Email" formControlName="email_receiver" class="form-control"  name="email_receiver">
+</mat-form-field>  
+<br>
+<mat-form-field appearance="outline">
+    <textarea rows="4" cols="50" matInput placeholder="text" formControlName="text" class="form-control"  name="text"></textarea>
+</mat-form-field>         
+ <br>
+<button       
+id="btnSubmit"
+mat-raised-button 
+color="primary"     
+type="submit"
+>
+Send</button>
+
+</form> 

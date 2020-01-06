@@ -3,3 +3,40 @@
     
 } */
 
+
+
+
+.Trailer{ 
+    max-width: 800px;
+    margin: auto;
+    margin-top:15%;
+    margin-bottom: 15%;
+    text-align: center;
+    
+}
+youtube-player{
+    height:50%
+   
+
+}
+
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field > * {
+    width: 50%;
+    
+  }
+
+  mat-grid-list{
+      margin-top: 15px;
+  }
+
+  img{
+    
+    height: 700px;
+  }
+
+  

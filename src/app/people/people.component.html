@@ -1,1 +1,19 @@
-<p>people works!</p>
+
+<h2>Peticiones pendientes(bien)</h2>
+<app-user-list-pending-requests
+*ngIf= "userPendingRequests$ | async as users;  else empty"
+[users]="users"
+>
+</app-user-list-pending-requests>
+
+<hr>
+<h2>Gente(mal)</h2>
+<app-user-list-not-friend 
+*ngIf= "user$ | async as users;  else empty"
+[users]="users"
+>
+</app-user-list-not-friend>
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 

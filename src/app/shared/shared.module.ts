@@ -12,13 +12,15 @@ import { LoadingComponent } from './loading/loading.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { GenresComponent } from './genres/genres.component';
 import { CommentListMailboxComponent } from './comment-list-mailbox/comment-list-mailbox.component';
-
+import { UserListNotFriendComponent } from './user-list-not-friend/user-list-not-friend.component';
+import { UserListPendingRequestsComponent } from './user-list-pending-requests/user-list-pending-requests.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -26,8 +28,10 @@ import { CommentListMailboxComponent } from './comment-list-mailbox/comment-list
     MatCardModule,
     MatGridListModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDividerModule
+    
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent]
 })
 export class SharedModule { }

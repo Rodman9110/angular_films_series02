@@ -1,13 +1,14 @@
 
-
+<mat-grid-list cols="4" rowHeight="1:1">
+<mat-grid-tile *ngFor="let user of users">   
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar  class="example-header-image">
-            <img mat-card-avatar src="assets/img/{{user.img_profile}}.png" alt="Photo of a Shiba Inu" >
+             <img mat-card-avatar src="assets/img/{{user.img_profile}}.png" alt="Photo of a Shiba Inu" > 
         </div>
         <mat-card-title>{{user.first_name}} {{user.last_name}}</mat-card-title>
         <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
     </mat-card-header>
 </mat-card>
-
-
+</mat-grid-tile>
+</mat-grid-list>

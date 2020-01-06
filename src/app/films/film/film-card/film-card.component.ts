@@ -15,6 +15,12 @@ export class FilmCardComponent implements OnInit {
   @Input() film: any[];
   @Input() comments: any[];
   user: UserInterface;
+
+
+  player: YT.Player;
+ 
+
+
   constructor(private formBuilder: FormBuilder , private commentServices: CommentService, private authentication: AuthenticationService,) {
 
     this.user = this.authentication.getCurrentUser();
@@ -25,7 +31,7 @@ export class FilmCardComponent implements OnInit {
       name:[this.user.first_name, Validators.required],
       text:['', Validators.required],
       email:[this.user.email,Validators.required],
-      img_profile:[this.user.img_profile,Validators.required] 
+      img_profile:[this.user.img_profile,Validators.required]
     });
    }
 
@@ -38,6 +44,14 @@ export class FilmCardComponent implements OnInit {
     console.log(this.filmForm.value);  
      this.commentServices.postCommentCriticFilm$(this.filmForm.value)
      .subscribe();
+  }
+
+  savePlayer(player) {
+    this.player = player;
+    console.log('player instance', player);
+  }
+  onStateChange(event) {
+    console.log('player state', event.data);
   }
 
 }

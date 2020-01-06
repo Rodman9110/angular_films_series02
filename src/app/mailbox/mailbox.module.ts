@@ -10,10 +10,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MailboxFormComponent } from './mailbox-form/mailbox-form.component';
 
 
 @NgModule({
-  declarations: [MailboxComponent],
+  declarations: [MailboxComponent, MailboxFormComponent],
   imports: [
     CommonModule,
     MailboxRoutingModule,
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
-  ]
+  ],
+  exports: [MailboxFormComponent]
 })
 export class MailboxModule { }

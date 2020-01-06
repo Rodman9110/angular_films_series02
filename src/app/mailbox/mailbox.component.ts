@@ -14,8 +14,9 @@ export class MailboxComponent implements OnInit {
   constructor(private commentMailBoxService: CommentMailboxService, private authentication: AuthenticationService) { }
 
   ngOnInit() {
-    const user = this.authentication.getToken();
-    this.comments$ = this.commentMailBoxService.getMyCommentMailbox$(user);
+    const id = this.authentication.getToken();
+    const User = this.authentication.getCurrentUser();
+    this.comments$ = this.commentMailBoxService.getMyCommentMailbox$(User.email);
   }
 
 }

@@ -12,7 +12,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [FilmComponent, FilmCardComponent],
@@ -26,7 +27,9 @@ import { MatInputModule } from '@angular/material/input';
     MatTabsModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    NgxYoutubePlayerModule, //YouTube
+    MatDividerModule
   ]
 })
 export class FilmModule { }

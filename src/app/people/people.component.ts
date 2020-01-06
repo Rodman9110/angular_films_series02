@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserService } from '../services/user.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-people',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor() { }
+  user$: Observable<any[]>;
+  userPendingRequests$: Observable<any[]>;
+  constructor(private userService: UserService,  private authentication: AuthenticationService) { }
 
   ngOnInit() {
+    const user = this.authentication.getToken();
+    this.user$ = this.userService.getAllUserNotAdded$(user);
+    this.userPendingRequests$ = this.userService.getAllUserPendingRequests$(user);
   }
 
 }
