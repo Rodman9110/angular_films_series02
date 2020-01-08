@@ -3,6 +3,8 @@
 <app-films-list
 *ngIf="films$ | async as films; else empty"
 [films]="films"
+[star]="star | async"
+[favoriteButtom]="favoriteButtom | async"
 >
 </app-films-list>
 

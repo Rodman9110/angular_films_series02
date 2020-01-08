@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FilmsService } from '../services/films.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-films',
@@ -10,10 +11,15 @@ import { FilmsService } from '../services/films.service';
 export class FilmsComponent implements OnInit {
 
   films$: Observable<any[]>;
-  constructor(private filmsService: FilmsService) { }
+  star: Observable<any[]>;
+  favoriteButtom: Observable<any>;
+  constructor(private filmsService: FilmsService, private authentication: AuthenticationService) { }
 
   ngOnInit() {
+    this.favoriteButtom = this.filmsService.getAllFilms$();
     this.films$ = this.filmsService.getAllFilms$();
+
+    
     
   }
 

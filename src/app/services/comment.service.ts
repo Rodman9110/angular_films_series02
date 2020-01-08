@@ -8,8 +8,8 @@ export class CommentService {
 
   URL_COMMENTS = 'http://localhost:8081/api/comments';
   URL_COMMENTS_ADD = 'http://localhost:8081/api';
-  URL_COMMENTS_FILM = 'http://localhost:8081/api/commentsFilm';
-  URL_COMMENTS_FILM_ADD = 'http://localhost:8081/api/AddCommentsFilm';
+  URL_COMMENTS_FILM = 'http://localhost:8081/comment/commentsFilm';
+  URL_COMMENTS_FILM_ADD = 'http://localhost:8081/comment/AddCommentsFilm';
 
   constructor(private http:HttpClient) { }
 

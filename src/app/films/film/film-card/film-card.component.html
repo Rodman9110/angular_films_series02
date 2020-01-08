@@ -1,37 +1,33 @@
 
-<h1>{{film.name}}</h1>
+<!-- <h1>{{film.name}}</h1>
 <mat-divider></mat-divider>
   <mat-grid-list cols="4" rowHeight="700px">
         <mat-grid-tile        
             [colspan]="1"
             [rowspan]="1"
             >
-            <img mat-card-image src="assets/img/{{film.poster_film}}" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="assets/img/{{film.poster_film}}.png" alt="Photo of a Shiba Inu" class="imagen_poster_film">
         </mat-grid-tile>
         <mat-grid-tile        
-            [colspan]="3"
+            [colspan]="2"
             [rowspan]="1"
             >              
-            <mat-card class="description"><h4>Details: <hr></h4> {{film.description}}</mat-card> 
+            <mat-card class="description"><h4>Details: <hr></h4> {{film.description}} 
+                <hr>
+                <ul>
+                    
+                    
+                    <li>Premiere: {{film.date_premiere}}</li>                 
+                    <li>Genero: {{genres.name }}</li>                                   
+                    <li>Classification: {{film.classification}} </li>
+                    <li>Country: {{country.name}} </li>
+                    <img src="https://www.countryflags.io/{{country.code}}/shiny/64.png" alt="" class="flags">
+                 </ul>
+            </mat-card> 
     </mat-grid-tile>  
     </mat-grid-list>
 
-    <mat-grid-list cols="4" rowHeight="100px">
-        <mat-grid-tile        
-            [colspan]="1"
-            [rowspan]="1"
-            >        
-            <mat-card>
-             <ul>
-                <li>Premiere: {{film.date_premiere}}</li>
-                <li>Genero: {{film.genres| json }}</li>
-                <li>Pais: {{film.id_country}} </li>
-                <li>Classification: {{film.classification}} </li>
-             </ul>
-                </mat-card>       
-            <!-- <mat-card>Genero: {{film.genres| json }}  ,{{film.genres}} {{film.trailer}}, </mat-card>               -->
-        </mat-grid-tile>
-    </mat-grid-list>
+    
 
     <mat-card class="Trailer">
     <h2>Trailer of {{film.name}}</h2>
@@ -41,13 +37,43 @@
      </youtube-player>
     </mat-card>
 
-    
+
+ -->
+
+
+
+
+    <h1>{{film.name}}</h1>
+    <mat-divider></mat-divider>
+    <mat-card class="card_exemple">
+        <mat-card class="Imgen">
+        <img mat-card-image src="assets/img/{{film.poster_film}}.png" alt="Photo of a Shiba Inu" class="imagen_poster_film">
+        </mat-card >
+        <h4>Details: <hr></h4> {{film.description}} 
+    <hr>
+        <ul>                      
+            <li>Premiere: {{film.date_premiere}}</li>                 
+            <li>Genero: {{genres.name }}</li>                                   
+            <li>Classification: {{film.classification}} </li>
+            <li>Country: {{country.name}} </li>
+            <img src="https://www.countryflags.io/{{country.code}}/shiny/64.png" alt="" class="flags">
+        </ul>
+        <mat-divider></mat-divider>
+        <mat-card class="Trailer">
+        <h2>Trailer of {{film.name}}</h2>
+            <youtube-player width="800" height="500"
+            videoId="{{film.trailer}}"
+            >
+            </youtube-player>
+        </mat-card>
+     </mat-card> 
+
     <form id="contactForm" [formGroup]="filmForm"  novalidate (ngSubmit)="ClickSaveCommentCritic()"> 
         <mat-card-title>Critics of {{film.name}} </mat-card-title>
-    <mat-form-field appearance="outline" >
+    <!-- <mat-form-field appearance="outline" >
         <input matInput  placeholder="id_film" formControlName="id_film" class="form-control"  name="id_film" value="{{film.id}}" required >
        
-    </mat-form-field>  
+    </mat-form-field>   -->
     
     <mat-form-field appearance="outline">
         <textarea rows="4" cols="50" matInput placeholder="text" formControlName="text" class="form-control"  name="text"></textarea>
@@ -60,13 +86,7 @@
     type="submit"
     >
     Send</button>
-    
     </form> 
 
     <br>
 
-
-     <!-- <app-genres
-     [genres]="film.genres | async "
-     >
-    </app-genres>   -->

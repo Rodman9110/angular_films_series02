@@ -15,6 +15,7 @@ import { CommentListMailboxComponent } from './comment-list-mailbox/comment-list
 import { UserListNotFriendComponent } from './user-list-not-friend/user-list-not-friend.component';
 import { UserListPendingRequestsComponent } from './user-list-pending-requests/user-list-pending-requests.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -29,7 +30,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatGridListModule,
     MatButtonModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule,
     
   ],
   exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent]

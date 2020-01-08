@@ -13,7 +13,7 @@
       <a mat-list-item routerLink="foro"> <mat-icon aria-hidden="false" aria-label="">chat</mat-icon> Foro</a>
       <a mat-list-item routerLink="mailbox"> <mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon> Mailbox </a>
       <a mat-list-item routerLink="people"> <mat-icon aria-hidden="false" aria-label="">people</mat-icon> People </a>
-      <a mat-list-item routerLink="myfilms"> <mat-icon aria-hidden="false" aria-label="">movie_filter</mat-icon> My Films </a>
+      <a mat-list-item routerLink="myfilms"> <mat-icon aria-hidden="false" aria-label="" *ngIf="valor"  matBadge="{{valor}}" matBadgeColor="primary">movie_filter</mat-icon> My Films </a>
       <a mat-list-item (click)="Logout()" > <mat-icon aria-hidden="false" aria-label="">exit_to_app</mat-icon> Logout </a>
     </mat-nav-list>
   </mat-sidenav>

@@ -3,6 +3,8 @@
 <app-film-card
 *ngIf="film$ | async as film; else empty"
 [film]="film"
+[genres]="genres$ | async"
+[country]="country$ | async"
 >
 </app-film-card>
 

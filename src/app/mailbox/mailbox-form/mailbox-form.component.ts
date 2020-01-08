@@ -48,7 +48,8 @@ export class MailboxFormComponent implements OnInit {
      this.commentMailboxService.postCommentMailbox$(this.mailboxForm.value)
      .subscribe(data => {
          alert("Employee created successfully.");
-         this.router.navigate(["/mailbox"]);
+         this.mailboxForm.reset();
+        //  this.router.navigate(["/mailbox"]);
     
      }
      );

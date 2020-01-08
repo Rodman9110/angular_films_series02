@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FilmsService } from '../services/films.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -13,13 +13,16 @@ export class MyFilmsComponent implements OnInit {
 
    
   films$: Observable<any[]>;
+  star: Observable<any[]>;
   constructor(private filmsService: FilmsService,  private authentication: AuthenticationService) { }
 
   ngOnInit() {
     const user = this.authentication.getToken();
     console.log(user);
     this.films$ = this.filmsService.getAllMyFilms$(user);
-    
+
+    //STAR 
+    this.star = this.filmsService.getAllMyFilms$(user);
   }
 
 }

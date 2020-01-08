@@ -49,6 +49,7 @@ export class ForoFormComponent implements OnInit {
      this.commentForoService.postCommentForo$(this.foroForm.value)
      .subscribe(data => {
          alert("Employee created successfully.");
+         this.foroForm.reset();
          this.router.navigate(["/foro"]);
     
      }

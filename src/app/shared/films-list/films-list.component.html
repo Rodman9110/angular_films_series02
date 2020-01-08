@@ -8,17 +8,19 @@
     <mat-grid-tile *ngFor="let film of films">
       <mat-card class="example-card" >
         <mat-card-header>
-          <mat-card-title>{{film.name}}</mat-card-title>
+          <mat-card-title>{{film.name}}  <button mat-button class="buttonStar" *ngIf="star"><mat-icon>star</mat-icon></button>  </mat-card-title>
           <mat-card-subtitle>{{film.classification}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="assets/img/{{film.poster_film}}" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="assets/img/{{film.poster_film}}.png" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <p>
             
           </p>
         </mat-card-content>
         <mat-card-actions class="example-button-row">
-         <button  mat-raised-button color="primary" [routerLink]="['/films',film.id]">Detais</button>
+         <button  mat-raised-button color="primary" [routerLink]="['/films',film.id]">Detais<mat-icon>description</mat-icon></button>
+         <button  mat-raised-button color="warn" *ngIf="favoriteButtom"  (click)="AddFavoriteFilm(film.id)">Favorite <mat-icon>star</mat-icon></button>
+         <button  mat-raised-button color="accent" *ngIf="star"  (click)="DeleteMyFavoriteFilm(film.id)">Delete<mat-icon>clear</mat-icon></button>
         </mat-card-actions>
       </mat-card> 
     </mat-grid-tile>    
