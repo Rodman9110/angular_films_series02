@@ -8,6 +8,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFileUploadModule } from 'angular-material-fileupload';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+
+
 
 
 @NgModule({
@@ -21,7 +27,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatCardModule,
     MatInputModule,
     MatButtonModule,  
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatFileUploadModule,
+ 
   ]
 })
 export class RegisterModule { }

@@ -18,6 +18,7 @@ export class FilmCardComponent implements OnInit {
   @Input() genres: any[];
   @Input() country: any[];
   @Input() filmId: number;
+  @Input() likes: number;
   user: UserInterface;
   player: YT.Player;
   constructor(

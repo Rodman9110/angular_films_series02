@@ -4,6 +4,7 @@ import { FilmsService } from 'src/app/services/films.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LikeService } from 'src/app/services/like.service';
 
 @Component({
   selector: 'app-film',
@@ -17,10 +18,12 @@ export class FilmComponent implements OnInit {
   comments$: Observable<any>;
   genres$: Observable<any>;
   country$: Observable<any>;
+  likes$: Observable<any>;
   constructor(
     private filmsServices:FilmsService,
     private activatedRoute: ActivatedRoute,
     private commentServices: CommentService,
+    private likeService: LikeService,
     ) 
     { 
     }
@@ -32,6 +35,7 @@ export class FilmComponent implements OnInit {
     this.comments$ = this.commentServices.getCommentFilm$(filmId);
     this.genres$ = this.filmsServices.getFilmGenre$(filmId);
     this.country$ = this.filmsServices.getFilmCountry$(filmId);
+    this.likes$ = this.likeService.getCountFilmLikes(filmId);
   }
 
 }

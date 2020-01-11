@@ -16,6 +16,7 @@ import { UserListNotFriendComponent } from './user-list-not-friend/user-list-not
 import { UserListPendingRequestsComponent } from './user-list-pending-requests/user-list-pending-requests.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 
@@ -32,6 +33,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatDividerModule,
     MatIconModule,
+    MatBadgeModule
     
   ],
   exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent]

@@ -55,9 +55,12 @@
             <li>Premiere: {{film.date_premiere}}</li>                 
             <li>Genero: {{genres.name }}</li>                                   
             <li>Classification: {{film.classification}} </li>
+            <li>Votes: <strong color="primary" >{{likes}}</strong></li>
             <li>Country: {{country.name}} </li>
             <img src="https://www.countryflags.io/{{country.code}}/shiny/64.png" alt="" class="flags">
         </ul>
+        <!-- </strong><mat-icon  class="icon_like">thumb_up</mat-icon> -->
+    
         <mat-divider></mat-divider>
         <mat-card class="Trailer">
         <h2>Trailer of {{film.name}}</h2>
