@@ -26,4 +26,8 @@ export class FilmsComponent implements OnInit {
     this.films$ = this.filmsService.getAllFilms$(); 
     this.likes$ = this.likeService.getCountAllFilmLike$();   
   }
+  getSearch(event: any){
+    console.log(event); 
+    this.films$ = this.filmsService.getSearchFilmForName$(event);
+  }
 }

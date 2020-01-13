@@ -52,12 +52,18 @@
         <h4>Details: <hr></h4> {{film.description}} 
     <hr>
         <ul>                      
-            <li>Premiere: {{film.date_premiere}}</li>                 
+            <li>Premiere: {{film.date_film}}</li>                 
             <li>Genero: {{genres.name }}</li>                                   
-            <li>Classification: {{film.classification}} </li>
             <li>Votes: <strong color="primary" >{{likes}}</strong></li>
             <li>Country: {{country.name}} </li>
             <img src="https://www.countryflags.io/{{country.code}}/shiny/64.png" alt="" class="flags">
+            <li>Classification: {{classification.name}} </li>
+            <br>
+            <mat-card class="ImgClassificationCard">
+                <img src="assets/img/img_classification_edad/{{classification.img_classification}}.png" alt="" class="ImgClassification">
+            </mat-card>
+            
+            
         </ul>
         <!-- </strong><mat-icon  class="icon_like">thumb_up</mat-icon> -->
     
@@ -88,7 +94,7 @@
     color="primary"     
     type="submit"
     >
-    Send</button>
+    <mat-icon class="icon_send">send</mat-icon> Send</button>
     </form> 
 
     <br>

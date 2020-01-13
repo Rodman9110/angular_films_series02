@@ -1,4 +1,8 @@
 
+<app-search-shared
+(search)="getSearch($event)"
+></app-search-shared>
+
 
 <app-films-list
 *ngIf="films$ | async as films; else empty"

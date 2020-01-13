@@ -1,0 +1,88 @@
+
+
+<mat-card>
+    <mat-card-title>Create Film</mat-card-title>
+<mat-card-content>
+<form id="contactForm" [formGroup]="filmForm"  novalidate (ngSubmit)="ClickSaveFilm()">
+   <p>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Name Film" formControlName="name" class="form-control"  name="name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+        <textarea rows="4" cols="80" matInput placeholder="Description" formControlName="description" class="form-control"  name="text"></textarea>      
+    </mat-form-field>
+  </p>
+  <p>
+    <input type="date" formControlName="date_film" value="{{ post.date_film | date:'yyyy-MM-dd' }}">
+    <mat-icon>date_range</mat-icon>
+    <!-- <mat-form-field>
+        <input matInput  formControlName="date_premiere" class="form-control"  name="date_premiere" value="{{ post.date_premiere | date:'yyyy-MM-dd' }}" [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+  </p>
+  <p>
+    <mat-form-field>
+     <mat-label>Genre</mat-label>
+     <mat-select  formControlName="id_genres">
+       <mat-option *ngFor="let option of genres"  value="{{option.id}}"><p>{{option.name}}</p> </mat-option>
+     </mat-select>
+   </mat-form-field>
+ </p> 
+  <p>
+     <mat-form-field>
+      <mat-label>Country</mat-label>
+      <mat-select  formControlName="id_country">
+        <mat-option *ngFor="let option of countries"  value="{{option.id}}"><p><img src="https://www.countryflags.io/{{option.code}}/shiny/32.png" alt="" class="flags"> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p> 
+
+
+
+
+
+  <p>
+    <mat-form-field>
+      <mat-label>Classification</mat-label>
+      <mat-select  formControlName="id_classification">
+        <mat-option *ngFor="let option of classification"  value="{{option.id}}"><p>{{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <input matInput type="text" placeholder="Classification" formControlName="classification" class="form-control"  name="classification">
+    </mat-form-field> -->
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Trailer" formControlName="trailer" class="form-control"  name="trailer">
+    </mat-form-field>
+  </p>
+  <p>
+    
+    <input  formControlName="poster_film" id="poster_film" type="file" />
+    
+  </p>
+
+ 
+
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>  
+
+  <div class="button">
+    
+    <button 
+    type="submit"
+    id="btnSubmit" 
+    mat-raised-button color="primary">
+    Send
+  </button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

@@ -1,0 +1,8 @@
+
+<form [formGroup]="searchSharedForm" novalidate (ngSubmit)="getSearchFilmForName()"> 
+    <mat-form-field appearance="outline" class="searchInput"> 
+        <input matInput formControlName="name" placeholder="Search..."  class="form-control"  name="name" >
+        <mat-icon type="button" (click)="getSearchFilmForName()"  mat-stroked-button matSuffix>search</mat-icon>   
+    </mat-form-field>
+</form>
+

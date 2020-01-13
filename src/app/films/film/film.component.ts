@@ -19,6 +19,7 @@ export class FilmComponent implements OnInit {
   genres$: Observable<any>;
   country$: Observable<any>;
   likes$: Observable<any>;
+  classification$: Observable<any>;
   constructor(
     private filmsServices:FilmsService,
     private activatedRoute: ActivatedRoute,
@@ -36,6 +37,7 @@ export class FilmComponent implements OnInit {
     this.genres$ = this.filmsServices.getFilmGenre$(filmId);
     this.country$ = this.filmsServices.getFilmCountry$(filmId);
     this.likes$ = this.likeService.getCountFilmLikes(filmId);
+    this.classification$ = this.filmsServices.getFilmClassification$(filmId);
   }
 
 }
