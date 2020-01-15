@@ -12,6 +12,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -30,6 +31,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MatSelectModule,
     MatDatepickerModule,
     MatFileUploadModule,
+    MatIconModule
  
   ]
 })

@@ -25,6 +25,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ActorFormComponent } from './actor-form/actor-form.component';
+import { ActorTableListComponent } from './actor-table-list/actor-table-list.component';
+import {MatTableModule} from '@angular/material/table';
+import { AlertConfirmComponent } from './alert-confirm/alert-confirm.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -32,7 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -50,13 +55,15 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatFileUploadModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatSnackBarModule
     
     
     // material modules
    
     
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent]
 })
 export class SharedModule { }

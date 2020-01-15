@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-title>Create Actor</mat-card-title>
+<mat-card-content>
+<form id="contactForm" [formGroup]="actorForm"  novalidate (ngSubmit)="ClickSaveActor()">
+   <p>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Name Actor" formControlName="name" class="form-control"  name="name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+        <textarea rows="4" cols="80" matInput placeholder="Details" formControlName="details" class="form-control"  name="details"></textarea>      
+    </mat-form-field>
+  </p>
+  <p>
+    <input type="date" formControlName="date_actor" value="{{ post.date_actor | date:'yyyy-MM-dd' }}">
+    <mat-icon>date_range</mat-icon>
+  </p>
+  
+  <p>
+     <mat-form-field>
+      <mat-label>Country</mat-label>
+      <mat-select  formControlName="id_country">
+        <mat-option *ngFor="let option of countries"  value="{{option.id}}"><p><img src="https://www.countryflags.io/{{option.code}}/shiny/32.png" alt="" class="flags"> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p> 
+  <p> 
+    <input  formControlName="img_profile" id="img_profile" type="file" />  
+  </p>
+
+ 
+
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>  
+
+  <div class="button">
+    
+    <button 
+    type="submit"
+    id="btnSubmit" 
+    mat-raised-button color="primary">
+    Send
+  </button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

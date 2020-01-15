@@ -7,4 +7,7 @@ export interface UserInterface {
     password?: string;
     country?: number;
     img_profile?: string;
+    date_user?: Date;
+    id_gender?: number;
+    id_role?:number;
   }

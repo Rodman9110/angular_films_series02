@@ -24,6 +24,26 @@
     </mat-form-field>
   </p>
   <p>
+    <input type="date" formControlName="date_user" value="{{ post.date_user | date:'yyyy-MM-dd' }}">
+    <mat-icon>date_range</mat-icon>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Gender</mat-label>
+      <mat-select  formControlName="id_gender">
+        <mat-option *ngFor="let option of gender$ | async "  value="{{option.id}}"><p> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Role</mat-label>
+      <mat-select  formControlName="id_role">
+        <mat-option *ngFor="let option of roles$ | async "  value="{{option.id}}"><p> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
     <mat-form-field>
       <mat-label>Country</mat-label>
       <mat-select  formControlName="country">

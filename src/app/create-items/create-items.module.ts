@@ -6,6 +6,7 @@ import { CreateItemsComponent } from './create-items.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [CreateItemsComponent],
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     CreateItemsRoutingModule,
     MatTabsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    MatSnackBarModule
   ]
 })
 export class CreateItemsModule { }

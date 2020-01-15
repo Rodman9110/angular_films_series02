@@ -45,6 +45,7 @@ export class FilmFormComponent implements OnInit {
   ClickSaveFilm(){
     console.log(this.filmForm.value);
     this.filmEmit.emit(this.filmForm.value);
+    // this.filmForm.reset();
   }
 
 }

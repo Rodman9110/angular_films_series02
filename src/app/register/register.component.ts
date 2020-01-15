@@ -3,6 +3,10 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CountriesService } from '../services/countries.service';
 import { RegisterService } from '../services/register.service';
+interface Post {
+  startDate: Date;
+  endDate: Date;
+}
 
 @Component({
   selector: 'app-register',
@@ -11,7 +15,13 @@ import { RegisterService } from '../services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
+  post: Post = {
+    startDate: new Date(Date.now()),
+    endDate: new Date(Date.now())
+  }
   countries$: Observable<any[]>;
+  roles$:Observable<any[]>;
+  gender$:Observable<any[]>;
   public registerForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -19,6 +29,8 @@ export class RegisterComponent implements OnInit {
     private registerServices: RegisterService
      ) {
     this.countries$ = this.countriesService.getAllCountries$();
+    this.roles$  = this.registerServices.getAllRole$();
+    this.gender$ =this.registerServices.getAllGender$();
    }
 
   ngOnInit() {
@@ -27,8 +39,12 @@ export class RegisterComponent implements OnInit {
       last_name:['',Validators.required],
       email:['', Validators.required],
       password:['', Validators.required], 
+      id_gender:[],
+      id_role:[],
       country:[],
-      img_profile:[]
+      img_profile:[],
+      date_user:['', Validators.required]
+
      });
   }
 
