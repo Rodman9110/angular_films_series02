@@ -4,6 +4,8 @@ import { CommentService } from 'src/app/services/comment.service';
 import { UserInterface } from 'src/app/Models/User';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActorsService } from 'src/app/services/actors.service';
 
 @Component({
   selector: 'app-film-card',
@@ -20,13 +22,15 @@ export class FilmCardComponent implements OnInit {
   @Input() filmId: number;
   @Input() likes: number;
   @Input() classification: any[];
+  @Input() actors: any[];
   user: UserInterface;
   player: YT.Player;
   constructor(
     private formBuilder: FormBuilder,
     private commentServices: CommentService,
     private authentication: AuthenticationService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private _snackBar: MatSnackBar
     ) 
     {
     const filmId = this.activatedRoute.snapshot.params.filmId;
@@ -54,6 +58,7 @@ export class FilmCardComponent implements OnInit {
      this.commentServices.postCommentCriticFilm$(this.filmForm.value)
      .subscribe();
      this.filmForm.reset();
+     this.openSnackBarFilmComment()
   }
 
   savePlayer(player) {
@@ -63,5 +68,16 @@ export class FilmCardComponent implements OnInit {
   onStateChange(event) {
     console.log('player state', event.data);
   }
+
+  openSnackBarFilmComment() {
+    this._snackBar.open('Message created successfully', 'Go!', {
+      duration: 3000,
+      panelClass: ['blue-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    
+    });
+  }
+
 
 }

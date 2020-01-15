@@ -27,5 +27,12 @@
     </app-actor-table-list>
     
   </mat-tab>
-  <mat-tab label="Create Series"> Content 3 </mat-tab>
+  <mat-tab label="Create Series">
+    <app-film-actor-form
+    [actors]="actors$ | async"
+    [films]="films$ | async"
+    (filmActorEmit)="getFilmActor($event)"
+    >
+    </app-film-actor-form>
+  </mat-tab>
 </mat-tab-group>

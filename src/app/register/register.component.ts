@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CountriesService } from '../services/countries.service';
 import { RegisterService } from '../services/register.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 interface Post {
   startDate: Date;
   endDate: Date;
@@ -26,7 +27,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private countriesService: CountriesService,
-    private registerServices: RegisterService
+    private registerServices: RegisterService,
+    private _snackBar: MatSnackBar
      ) {
     this.countries$ = this.countriesService.getAllCountries$();
     this.roles$  = this.registerServices.getAllRole$();
@@ -51,6 +53,17 @@ export class RegisterComponent implements OnInit {
   ClickSaveRegistry(){
     console.log(this.registerForm.value);
     this.registerServices.postAddRegisterUser$(this.registerForm.value).subscribe();
+    // this.openSnackBarRegister();
+  }
+
+  openSnackBarRegister() {
+    this._snackBar.open('User created Successfully', 'Go!', {
+      duration: 3000,
+      panelClass: ['blue-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    
+    });
   }
 
 }

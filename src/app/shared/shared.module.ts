@@ -30,6 +30,7 @@ import { ActorTableListComponent } from './actor-table-list/actor-table-list.com
 import {MatTableModule} from '@angular/material/table';
 import { AlertConfirmComponent } from './alert-confirm/alert-confirm.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FilmActorFormComponent } from './film-actor-form/film-actor-form.component';
 
 
 
@@ -37,7 +38,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -64,6 +65,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
    
     
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent]
 })
 export class SharedModule { }

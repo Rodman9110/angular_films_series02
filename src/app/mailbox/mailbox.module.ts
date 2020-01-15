@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MailboxFormComponent } from './mailbox-form/mailbox-form.component';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
   exports: [MailboxFormComponent]
 })

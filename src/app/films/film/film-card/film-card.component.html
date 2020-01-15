@@ -61,14 +61,26 @@
             <br>
             <mat-card class="ImgClassificationCard">
                 <img src="assets/img/img_classification_edad/{{classification.img_classification}}.png" alt="" class="ImgClassification">
-            </mat-card>
-            
-            
+            </mat-card>           
         </ul>
         <!-- </strong><mat-icon  class="icon_like">thumb_up</mat-icon> -->
-    
         <mat-divider></mat-divider>
-        <mat-card class="Trailer">
+
+        <h2>Reparto</h2>
+            <mat-grid-list cols="4" rowHeight="1:2">
+                <mat-grid-tile *ngFor="let actor of actors">
+
+                  <mat-card class="example-card-reparto" >
+                   
+                    <img mat-card-image src="assets/img/actors/{{actor.img_profile}}.png" alt="Photo of a Shiba Inu" class="example-card-example-card-reparto-imagen">
+                    <mat-card-header>
+                        <mat-card-title>{{actor.name}}  </mat-card-title>                      
+                      </mat-card-header>
+                  </mat-card>
+                </mat-grid-tile>                    
+              </mat-grid-list> 
+              <p><mat-divider></mat-divider></p>
+        <mat-card class="Trailer">   
         <h2>Trailer of {{film.name}}</h2>
             <youtube-player width="800" height="500"
             videoId="{{film.trailer}}"
@@ -79,10 +91,7 @@
 
     <form id="contactForm" [formGroup]="filmForm"  novalidate (ngSubmit)="ClickSaveCommentCritic()"> 
         <mat-card-title>Critics of {{film.name}} </mat-card-title>
-    <!-- <mat-form-field appearance="outline" >
-        <input matInput  placeholder="id_film" formControlName="id_film" class="form-control"  name="id_film" value="{{film.id}}" required >
-       
-    </mat-form-field>   -->
+   
     
     <mat-form-field appearance="outline">
         <textarea rows="4" cols="50" matInput placeholder="text" formControlName="text" class="form-control"  name="text"></textarea>

@@ -17,12 +17,13 @@ export class CreateItemsComponent implements OnInit {
   genres$: Observable<any[]>;
   classification$: Observable<any[]>;
   actors$: Observable<any[]>;
+  films$: Observable<any[]>;
   constructor( 
     private countriesService: CountriesService,
     private genresService: SearchService,
     private filmsService: FilmsService,
     private actorsService: ActorsService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
      ) { }
 
   ngOnInit() {
@@ -30,7 +31,7 @@ export class CreateItemsComponent implements OnInit {
     this.genres$ = this.genresService.getAllGenres$();
     this.classification$ = this.genresService.getAllClassification$();
     this.actors$ = this.actorsService.getAllActors$();
-    
+    this.films$ = this.filmsService.getAllFilms$();
   }
 
   getFilm(film: any){
@@ -43,6 +44,11 @@ export class CreateItemsComponent implements OnInit {
     this.actorsService.postAddActor(actor).subscribe();
     this.openSnackBarActor();
   }
+  getFilmActor(filmActor: any){
+    console.log(filmActor);
+    this.openSnackBarFilmActor();
+  
+  }
   openSnackBarFilm() {
     this._snackBar.open('Film created Successfully', 'Go!', {
       duration: 3000,
@@ -54,6 +60,15 @@ export class CreateItemsComponent implements OnInit {
   }
   openSnackBarActor() {
     this._snackBar.open('Actor created Successfully', 'Go!', {
+      duration: 3000,
+      panelClass: ['blue-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    
+    });
+  }
+  openSnackBarFilmActor() {
+    this._snackBar.open('Add Actor in Film  Successfully', 'Go!', {
       duration: 3000,
       panelClass: ['blue-snackbar'],
       verticalPosition: 'top',

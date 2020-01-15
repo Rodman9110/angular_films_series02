@@ -68,4 +68,19 @@ mat-form-field {
     height: 50px;
   }
 
+  .example-card-reparto{  
+    max-width: 200px;
+    margin: auto;
+    margin-top:5%;
+   
+  }
+  .example-card-example-card-reparto-imagen{
+    width: 200px;
+    height: 230px;
+  }
+  h2{
+    text-align: center;
+  }
+ 
+
   

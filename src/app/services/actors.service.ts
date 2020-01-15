@@ -9,6 +9,7 @@ export class ActorsService {
   URL_GET_ALL_ACTORS = 'http://localhost:8081/actors/getAllActors';
   URL_GET_ACTOR_FILM = 'http://localhost:8081/actors/getAllActorsFilm';
   URL_ADD_ACTOR = 'http://localhost:8081/actors/postAddActor';
+  
 
   constructor(private http: HttpClient) { }
 
@@ -25,4 +26,5 @@ export class ActorsService {
     console.log(actor);
     return this.http.post<any>(url,actor);
   }
+  
 }

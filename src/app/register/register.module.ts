@@ -13,6 +13,7 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -31,7 +32,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatDatepickerModule,
     MatFileUploadModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
  
   ]
 })

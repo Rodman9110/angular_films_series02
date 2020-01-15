@@ -1,0 +1,42 @@
+
+
+<mat-card>
+    <mat-card-title>Add Actor in Film</mat-card-title>
+<mat-card-content>
+<form id="contactForm" [formGroup]="filmActorForm"  novalidate (ngSubmit)="ClickSaveFilmActor()">
+  <p>
+    <mat-form-field>
+      <mat-label>Film</mat-label>
+      <mat-select  formControlName="id_film">
+        <mat-option *ngFor="let option of films "  value="{{option.id}}"><p> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+ </p>
+
+ <p>
+    <mat-form-field>
+      <mat-label>Actors</mat-label>
+      <mat-select  formControlName="id_actor">
+        <mat-option *ngFor="let option of actors"  value="{{option.id}}"><p> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+ </p>
+  
+ 
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    
+    <button 
+    type="submit"
+    id="btnSubmit" 
+    mat-raised-button color="primary">
+    Send
+  </button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

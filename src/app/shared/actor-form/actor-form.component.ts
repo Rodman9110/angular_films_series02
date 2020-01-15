@@ -36,7 +36,7 @@ export class ActorFormComponent implements OnInit {
   ClickSaveActor(){
     console.log(this.actorForm.value);
     this.actorEmit.emit(this.actorForm.value);
-  
+    this.actorForm.reset();
   }
 
 }

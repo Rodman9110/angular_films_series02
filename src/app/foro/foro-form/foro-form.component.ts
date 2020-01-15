@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserInterface } from 'src/app/Models/User';
 import { CommentForoService } from 'src/app/services/comment-foro.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class ForoFormComponent implements OnInit {
     private commentService: CommentService,
     private router: Router,
     private authentication: AuthenticationService,
-    private commentForoService: CommentForoService
+    private commentForoService: CommentForoService,
+    private _snackBar: MatSnackBar
     ) { 
       this.user = this.authentication.getCurrentUser();
       console.log(this.user);  
@@ -48,19 +50,27 @@ export class ForoFormComponent implements OnInit {
 
      this.commentForoService.postCommentForo$(this.foroForm.value)
      .subscribe(data => {
-         alert("Employee created successfully.");
+      
          this.foroForm.reset();
+         this.openSnackBarForo()
          this.router.navigate(["/foro"]);
     
      }
-     );
-
-
-    //  this.commentService.postComment$(this.foroForm.value)
-    //  .subscribe(data => {
-    //     // alert("Employee created successfully.");
-    //      this.router.navigate(["/films"]);
-    //   });    
-    
+     );   
   }
+  openSnackBarForo() {
+    this._snackBar.open('Message created successfully', 'Go!', {
+      duration: 3000,
+      panelClass: ['blue-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    
+    });
+  }
+
+
+
+
+
+
 }
