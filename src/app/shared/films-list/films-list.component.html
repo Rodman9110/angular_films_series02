@@ -9,7 +9,6 @@
       <mat-card class="example-card" >
         <mat-card-header>
           <mat-card-title>{{film.name}}  <button mat-button class="buttonStar" *ngIf="star"><mat-icon>star</mat-icon></button>  </mat-card-title>
-          <mat-card-subtitle>{{film.classification}}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="assets/img/{{film.poster_film}}.png" alt="Photo of a Shiba Inu">
         <mat-card-content>
@@ -21,7 +20,7 @@
          <button  mat-raised-button color="primary" [routerLink]="['/films',film.id]">Detais<mat-icon>description</mat-icon></button>
          <button  mat-raised-button color="warn" *ngIf="favoriteButtom"  (click)="AddFavoriteFilm(film.id)">Favorite <mat-icon>star</mat-icon></button>
          <button  mat-raised-button color="accent" *ngIf="star"  (click)="DeleteMyFavoriteFilm(film.id)">Delete<mat-icon>clear</mat-icon></button>
-         <button mat-button class="buttonLike"  *ngIf="favoriteButtom" (click)="AddFilmLike(film.id)"><mat-icon matBadge="20" matBadgeColor="primary">thumb_up</mat-icon></button>
+         <button mat-button class="buttonLike"  *ngIf="favoriteButtom" (click)="AddFilmLike(film.id)"><mat-icon >thumb_up</mat-icon></button>
        
         </mat-card-actions>
       </mat-card> 

@@ -9,8 +9,12 @@
        [genres]="genres$| async"
        [classification]="classification$| async"
        (filmEmit)="getFilm($event)"
-       ></app-film-form
-        >
+       ></app-film-form>
+       <app-film-table-list
+       *ngIf="films$ | async as films"
+       [films]="films"
+       >        
+       </app-film-table-list>
   </mat-tab>
   <mat-tab label="Create Actors"> 
     <app-actor-form
@@ -27,7 +31,7 @@
     </app-actor-table-list>
     
   </mat-tab>
-  <mat-tab label="Create Series">
+  <mat-tab label="Add Actors in Films">
     <app-film-actor-form
     [actors]="actors$ | async"
     [films]="films$ | async"

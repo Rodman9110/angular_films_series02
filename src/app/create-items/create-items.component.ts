@@ -46,6 +46,7 @@ export class CreateItemsComponent implements OnInit {
   }
   getFilmActor(filmActor: any){
     console.log(filmActor);
+    this.actorsService.postAddActorFilm(filmActor).subscribe();
     this.openSnackBarFilmActor();
   
   }

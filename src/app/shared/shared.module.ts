@@ -31,6 +31,8 @@ import {MatTableModule} from '@angular/material/table';
 import { AlertConfirmComponent } from './alert-confirm/alert-confirm.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilmActorFormComponent } from './film-actor-form/film-actor-form.component';
+import { FilmTableListComponent } from './film-table-list/film-table-list.component';
+
 
 
 
@@ -38,7 +40,7 @@ import { FilmActorFormComponent } from './film-actor-form/film-actor-form.compon
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -65,6 +67,6 @@ import { FilmActorFormComponent } from './film-actor-form/film-actor-form.compon
    
     
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent]
 })
 export class SharedModule { }
