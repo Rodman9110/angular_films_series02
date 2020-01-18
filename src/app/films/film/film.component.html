@@ -11,12 +11,13 @@
 >
 </app-film-card>
 
+<mat-card class="card_exemple">
 <app-comment-list
 *ngIf="comments$ | async as comments"
 [comments]="comments"
 >
 </app-comment-list>
-
+</mat-card>
 
 <ng-template #empty>
 <app-loading></app-loading>

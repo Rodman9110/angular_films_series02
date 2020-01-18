@@ -85,14 +85,14 @@
             <youtube-player width="800" height="500"
             videoId="{{film.trailer}}"
             >
-            </youtube-player>
+            </youtube-player>        
         </mat-card>
-     </mat-card> 
-
+        
+        <mat-divider></mat-divider>
+        <br>
+        <br>
     <form id="contactForm" [formGroup]="filmForm"  novalidate (ngSubmit)="ClickSaveCommentCritic()"> 
         <mat-card-title>Critics of {{film.name}} </mat-card-title>
-   
-    
     <mat-form-field appearance="outline">
         <textarea rows="4" cols="50" matInput placeholder="text" formControlName="text" class="form-control"  name="text"></textarea>
     </mat-form-field>         
@@ -105,6 +105,5 @@
     >
     <mat-icon class="icon_send">send</mat-icon> Send</button>
     </form> 
-
-    <br>
+</mat-card> 
 

@@ -46,7 +46,7 @@
   <p>
     <mat-form-field>
       <mat-label>Country</mat-label>
-      <mat-select  formControlName="country">
+      <mat-select  formControlName="id_country">
         <mat-option *ngFor="let option of countries$ | async "  value="{{option.id}}"><p><img src="https://www.countryflags.io/{{option.code}}/shiny/32.png" alt="" class="flags"> {{option.name}}</p> </mat-option>
       </mat-select>
     </mat-form-field>

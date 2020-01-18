@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
       password:['', Validators.required], 
       id_gender:[],
       id_role:[],
-      country:[],
+      id_country:[],
       img_profile:[],
       date_user:['', Validators.required]
 
