@@ -32,6 +32,9 @@ import { AlertConfirmComponent } from './alert-confirm/alert-confirm.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilmActorFormComponent } from './film-actor-form/film-actor-form.component';
 import { FilmTableListComponent } from './film-table-list/film-table-list.component';
+import { TopFilmsComponent } from './top-films/top-films.component';
+import { ActorsListComponent } from './actors-list/actors-list.component';
+
 
 
 
@@ -40,7 +43,7 @@ import { FilmTableListComponent } from './film-table-list/film-table-list.compon
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -67,6 +70,6 @@ import { FilmTableListComponent } from './film-table-list/film-table-list.compon
    
     
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent]
 })
 export class SharedModule { }

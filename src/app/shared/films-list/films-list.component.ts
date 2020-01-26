@@ -35,12 +35,14 @@ export class FilmsListComponent implements OnInit {
     this.filmsService.postMyFavoriteFilm$(IdFilm,id).subscribe();
     this.openSnackBarFilmFavorite();
     this.router.navigate(["films"]);
+    window.location.reload();
   }
   DeleteMyFavoriteFilm(IdFilm){
     const id_user = this.authentication.getToken();
     this.filmsService.DeleteMyFavoriteFilm$(id_user,IdFilm).subscribe()
     this.openSnackBarDeleteFilmFavorite();
     this.router.navigate(["myfilms"]);
+    window.location.reload();
   }
 
   AddFilmLike(IdFilm){

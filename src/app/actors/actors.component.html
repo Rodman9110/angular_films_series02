@@ -1,0 +1,12 @@
+
+
+<app-search-shared
+(search)="getSearch($event)"
+></app-search-shared>
+
+
+<app-actors-list
+*ngIf="actors$ | async as actors"
+[actors]="actors"
+>
+</app-actors-list>

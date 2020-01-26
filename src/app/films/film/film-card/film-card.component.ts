@@ -58,7 +58,8 @@ export class FilmCardComponent implements OnInit {
      this.commentServices.postCommentCriticFilm$(this.filmForm.value)
      .subscribe();
      this.filmForm.reset();
-     this.openSnackBarFilmComment()
+     this.openSnackBarFilmComment();
+     window.location.reload();
   }
 
   savePlayer(player) {
@@ -71,7 +72,7 @@ export class FilmCardComponent implements OnInit {
 
   openSnackBarFilmComment() {
     this._snackBar.open('Message created successfully', 'Go!', {
-      duration: 3000,
+      duration: 5000,
       panelClass: ['blue-snackbar'],
       verticalPosition: 'top',
       horizontalPosition: 'center',

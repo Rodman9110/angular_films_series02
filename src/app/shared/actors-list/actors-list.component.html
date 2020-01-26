@@ -1,0 +1,10 @@
+<mat-grid-list cols="6" rowHeight="1:2">
+    <mat-grid-tile *ngFor="let actor of actors" >
+      <mat-card class="example-card-reparto" >
+        <img mat-card-image src="assets/img/actors/{{actor.img_profile}}.png" alt="Photo of a Shiba Inu" class="example-card-example-card-reparto-imagen">
+        <mat-card-header>
+            <mat-card-title>{{actor.name}}  </mat-card-title>                      
+        </mat-card-header>
+      </mat-card> 
+    </mat-grid-tile>    
+  </mat-grid-list> 

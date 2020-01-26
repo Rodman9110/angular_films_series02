@@ -41,12 +41,13 @@ export class CreateItemsComponent implements OnInit {
   }
   getActor(actor: any){
     console.log(actor);
-    this.actorsService.postAddActor(actor).subscribe();
+    this.actorsService.postAddActor(actor).subscribe(data =>{console.log(data)});
+   
     this.openSnackBarActor();
   }
   getFilmActor(filmActor: any){
     console.log(filmActor);
-    this.actorsService.postAddActorFilm(filmActor).subscribe();
+    this.actorsService.postAddActorFilm(filmActor).subscribe(data =>{console.log(data)});
     this.openSnackBarFilmActor();
   
   }

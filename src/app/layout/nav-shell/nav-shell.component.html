@@ -8,6 +8,7 @@
       <a mat-list-item routerLink=''><mat-icon aria-hidden="false" aria-label="">home</mat-icon> Home</a>
       <a mat-list-item routerLink="profile"> <mat-icon aria-hidden="false" aria-label="">person</mat-icon> Profile</a>
       <a mat-list-item routerLink='films'><mat-icon aria-hidden="false" aria-label="">movie</mat-icon> Films</a>
+      <a mat-list-item routerLink="actors"> <mat-icon aria-hidden="false" aria-label="">assignment_ind</mat-icon> Actors </a>
       <a mat-list-item routerLink="series"> <mat-icon aria-hidden="false" aria-label="">local_movies</mat-icon> Series</a>
       <a mat-list-item routerLink="search"> <mat-icon aria-hidden="false" aria-label="">youtube_searched_for</mat-icon> Search</a>
       <a mat-list-item routerLink="foro"> <mat-icon aria-hidden="false" aria-label="">chat</mat-icon> Foro</a>
@@ -15,6 +16,7 @@
       <a mat-list-item routerLink="people"> <mat-icon aria-hidden="false" aria-label="">people</mat-icon> People </a>
       <a mat-list-item routerLink="myfilms"> <mat-icon aria-hidden="false" aria-label="" *ngIf="valor"  matBadge="{{valor}}" matBadgeColor="primary">movie_filter</mat-icon> My Films </a>
       <a mat-list-item routerLink="createItems"> <mat-icon aria-hidden="false" aria-label="">add_box</mat-icon> Create Items </a>
+      <a mat-list-item routerLink="top"> <mat-icon aria-hidden="false" aria-label="">emoji_events</mat-icon> Top </a>
       <a mat-list-item (click)="Logout()" > <mat-icon aria-hidden="false" aria-label="">exit_to_app</mat-icon> Logout </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -34,5 +36,6 @@
       <h2>{{user.email}}</h2>
     </mat-toolbar>
     <router-outlet></router-outlet>
+    <!-- <mat-toolbar color="war" class="footer"></mat-toolbar> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

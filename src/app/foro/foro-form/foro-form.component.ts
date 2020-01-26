@@ -54,6 +54,7 @@ export class ForoFormComponent implements OnInit {
          this.foroForm.reset();
          this.openSnackBarForo()
          this.router.navigate(["/foro"]);
+         window.location.reload();
     
      }
      );   
