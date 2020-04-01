@@ -10,4 +10,5 @@ export interface UserInterface {
     date_user?: Date;
     id_gender?: number;
     id_role?:number;
+    id_country?:number;
   }

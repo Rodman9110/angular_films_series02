@@ -10,4 +10,11 @@
     </mat-card-header>
 </mat-card>
 
+<app-profile-user
+*ngIf="country$ | async as country; else empty"
+>
+</app-profile-user>
 
+<!-- <ng-template #empty>
+    <app-loading></app-loading>
+</ng-template>  -->

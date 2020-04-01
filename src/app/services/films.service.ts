@@ -9,18 +9,18 @@ import { map } from 'rxjs/operators';
 })
 export class FilmsService {
 
-  URL_FILMS = 'http://localhost:8081/api/films';
-  URL_GENRES = 'http://localhost:8081/api/getFilmGenre';
-  URL_COUNTRY = 'http://localhost:8081/api/getFilmCountry';
-  URL_CLASSIFICATION = 'http://localhost:8081/api/getFilmClassification';
+  URL_FILMS = 'http://localhost:8081/apiFilm/films';
+  URL_GENRES = 'http://localhost:8081/apiFilm/getFilmGenre';
+  URL_COUNTRY = 'http://localhost:8081/apiFilm/getFilmCountry';
+  URL_CLASSIFICATION = 'http://localhost:8081/apiFilm/getFilmClassification';
 
   URL_ALL_MY_FILMS = 'http://localhost:8081/myFilms/MyFilmsFavorites';
   URL_ADD_FAVORITE_FILM ='http://localhost:8081/myFilms/postMyFavoriteFilm';
   URL_COUNT_MY_FILMS = 'http://localhost:8081/myFilms/getCountMyFilmsUser';
   URL_DELETE_MY_FILMS = 'http://localhost:8081/myFilms/DeleteMyFilm';
   
-  URL_SEARCH_FILM_NAME = 'http://localhost:8081/api/getSearchFilmsForName';
-  URL_ADD_FILM = 'http://localhost:8081/api/postAddFilm';
+  URL_SEARCH_FILM_NAME = 'http://localhost:8081/apiFilm/getSearchFilmsForName';
+  URL_ADD_FILM = 'http://localhost:8081/apiFilm/postAddFilm';
 
 
   headers = new HttpHeaders;
@@ -30,6 +30,7 @@ export class FilmsService {
 
   getAllFilms$(){
     const url =this.URL_FILMS;
+    console.log(url);
     return this.http.get<any[]>(url,{headers: this.headers});
   }
   getFilm$(filmId){

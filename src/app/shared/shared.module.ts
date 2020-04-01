@@ -34,6 +34,8 @@ import { FilmActorFormComponent } from './film-actor-form/film-actor-form.compon
 import { FilmTableListComponent } from './film-table-list/film-table-list.component';
 import { TopFilmsComponent } from './top-films/top-films.component';
 import { ActorsListComponent } from './actors-list/actors-list.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+
 
 
 
@@ -43,7 +45,7 @@ import { ActorsListComponent } from './actors-list/actors-list.component';
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent, ProfileUserComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -70,6 +72,6 @@ import { ActorsListComponent } from './actors-list/actors-list.component';
    
     
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent]
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent, ProfileUserComponent]
 })
 export class SharedModule { }
