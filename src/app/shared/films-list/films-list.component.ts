@@ -1,10 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FilmsService } from 'src/app/services/films.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserInterface } from 'src/app/Models/User';
 import { Router } from '@angular/router';
 import { LikeService } from 'src/app/services/like.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from "@angular/material/sort";
+import { MatPaginator, PageEvent } from "@angular/material/paginator";
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-films-list',
@@ -18,6 +21,7 @@ export class FilmsListComponent implements OnInit {
   @Input() favoriteButtom;
   @Input() likes;
   user: UserInterface;
+  dataSource = new MatTableDataSource(this.films);
   constructor(
      private filmsService: FilmsService,
      private authentication: AuthenticationService,
@@ -26,9 +30,21 @@ export class FilmsListComponent implements OnInit {
      private _snackBar: MatSnackBar,
      ) { }
 
+     
   ngOnInit() {
+    this.dataSource.data = this.films;
+    this.dataSource.paginator = this.paginator;
     
   }
+  length = 100;
+  pageSize = 5;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  pageEvent: PageEvent;
+
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+   
   
   AddFavoriteFilm(IdFilm){
     const id = this.authentication.getToken();

@@ -27,5 +27,13 @@
     </mat-grid-tile>    
   </mat-grid-list> 
 
+ 
+  <mat-paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = $event"
+>
+</mat-paginator>
 
  

@@ -35,6 +35,8 @@ import { FilmTableListComponent } from './film-table-list/film-table-list.compon
 import { TopFilmsComponent } from './top-films/top-films.component';
 import { ActorsListComponent } from './actors-list/actors-list.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -65,8 +67,9 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
     MatSelectModule,
     MatNativeDateModule,
     MatTableModule,
-    MatSnackBarModule
-    
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatSortModule
     
     // material modules
    

@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
 
   getSearch(event: any){
     console.log(event);
-    this.films$ = this.searchServices.findForGenres$(event);
+    this.films$ = this.searchServices.SearchFilm$(event);
     
   }
 
