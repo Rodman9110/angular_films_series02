@@ -5,6 +5,7 @@ import { SearchService } from '../services/search.service';
 import { FilmsService } from '../services/films.service';
 import { ActorsService } from '../services/actors.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CompaniesService } from '../services/companies.service';
 
 @Component({
   selector: 'app-create-items',
@@ -18,11 +19,15 @@ export class CreateItemsComponent implements OnInit {
   classification$: Observable<any[]>;
   actors$: Observable<any[]>;
   films$: Observable<any[]>;
+  companies$: Observable<any[]>;
+  filmCompanies$: Observable<any[]>;
+
   constructor( 
     private countriesService: CountriesService,
     private genresService: SearchService,
     private filmsService: FilmsService,
     private actorsService: ActorsService,
+    private companiesService: CompaniesService,
     private _snackBar: MatSnackBar,
      ) { }
 
@@ -32,6 +37,8 @@ export class CreateItemsComponent implements OnInit {
     this.classification$ = this.genresService.getAllClassification$();
     this.actors$ = this.actorsService.getAllActors$();
     this.films$ = this.filmsService.getAllFilms$();
+    this.companies$ = this.companiesService.getAllCompanies$();
+    this.filmCompanies$ = this.companiesService.getFilmsCompanies$();
   }
 
   getFilm(film: any){

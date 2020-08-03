@@ -13,6 +13,8 @@
        <app-film-table-list
        *ngIf="films$ | async as films"
        [films]="films"
+       [companies]="companies$ | async"
+       [filmCompanies]="filmCompanies$| async"
        >        
        </app-film-table-list>
   </mat-tab>
