@@ -36,7 +36,9 @@ export class FilmTableListComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   
   ngOnInit() {
+    console.log("RR")
     console.log(this.films);
+    console.log("RR")
     console.log(this.companies);
     console.log(this.filmCompanies);
     this.dataSource.data = this.films;

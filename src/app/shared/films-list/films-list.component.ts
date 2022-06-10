@@ -16,6 +16,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class FilmsListComponent implements OnInit {
 
+  @Input() filmsTest;
   @Input() films;
   @Input() star;
   @Input() favoriteButtom;
@@ -34,6 +35,9 @@ export class FilmsListComponent implements OnInit {
   ngOnInit() {
     this.dataSource.data = this.films;
     this.dataSource.paginator = this.paginator;
+
+    console.log(this.films)
+    console.log(this.filmsTest)
     
   }
   length = 100;

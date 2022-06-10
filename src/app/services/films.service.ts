@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import { map } from 'rxjs/operators';
+import { FilmInterface } from 'src/app/Models/Film';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -27,6 +29,12 @@ export class FilmsService {
   constructor(private http: HttpClient) {
     this.headers.append("Content-Type" ,"application/json");
    }
+   getAllFilmsTest$() :Observable<FilmInterface[]>{
+    const url =this.URL_FILMS;
+    console.log(url);
+    return this.http.get<FilmInterface[]>(url,{headers: this.headers});
+  }
+
 
   getAllFilms$(){
     const url =this.URL_FILMS;
