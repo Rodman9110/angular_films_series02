@@ -37,6 +37,10 @@ import { ActorsListComponent } from './actors-list/actors-list.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -47,7 +51,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
-  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent, ProfileUserComponent],
+  declarations: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent, ProfileUserComponent, DialogModalComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -69,12 +73,15 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatSnackBarModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule,
+    MatMenuModule
     
     // material modules
    
     
   ],
-  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent, ProfileUserComponent]
+  entryComponents: [DialogModalComponent],
+  exports: [FilmsListComponent, SeriesListComponent,LoadingComponent, CommentListComponent, GenresComponent, CommentListMailboxComponent, UserListNotFriendComponent, UserListPendingRequestsComponent, SearchSharedComponent, FilmFormComponent, ActorFormComponent, ActorTableListComponent, AlertConfirmComponent, FilmActorFormComponent, FilmTableListComponent, TopFilmsComponent, ActorsListComponent, ProfileUserComponent, DialogModalComponent]
 })
 export class SharedModule { }

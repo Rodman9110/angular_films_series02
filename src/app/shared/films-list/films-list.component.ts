@@ -19,7 +19,7 @@ export class FilmsListComponent implements OnInit {
   @Input() filmsTest;
   @Input() films;
   @Input() star;
-  @Input() favoriteButtom;
+  @Input() favorite;
   @Input() likes;
   user: UserInterface;
   dataSource = new MatTableDataSource(this.films);
@@ -36,8 +36,8 @@ export class FilmsListComponent implements OnInit {
     this.dataSource.data = this.films;
     this.dataSource.paginator = this.paginator;
 
-    console.log(this.films)
-    console.log(this.filmsTest)
+    // console.log(this.films)
+    console.log("filmsTest",this.filmsTest)
     
   }
   length = 100;

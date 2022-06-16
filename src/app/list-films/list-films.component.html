@@ -1,0 +1,14 @@
+<p>list-films works!</p>
+
+
+ 
+       <app-film-table-list
+       *ngIf="films$ | async as films"
+       [films]="films"
+       [companies]="companies$ | async"
+       [filmCompanies]="filmCompanies$| async"
+       (filmEmitEdit)="EditOrDeleteFilm($event)"
+       (filmEmitNew)="NewFilm($event)"
+       >        
+       </app-film-table-list>
+ 

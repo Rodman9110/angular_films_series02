@@ -1,7 +1,10 @@
 
+
+
 <app-search-shared
 (search)="getSearch($event)"
 ></app-search-shared>
+
 
 
 <app-films-list
@@ -9,9 +12,9 @@
 [films]="films"
 [likes]="likes$ | async"
 [star]="star | async"
-[favoriteButtom]="favoriteButtom | async"
-[filmsTest]="dataFilms"
+
 >
+
 </app-films-list>
 
 

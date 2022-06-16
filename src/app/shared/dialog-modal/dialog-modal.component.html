@@ -1,0 +1,93 @@
+
+
+
+
+
+
+  <h1  *ngIf="data.changeDialog==false" mat-dialog-title>Nueva Pelicula</h1>
+  <h1  *ngIf="data.changeDialog" mat-dialog-title> Editar Pelicula: {{data.name}}</h1>
+
+  <!-- <h1  *ngIf="data.changeDialog = false" mat-dialog-title> Nueva Pelicula</h1> -->
+
+  <button mat-icon-button  aria-label="Example icon-button with a menu" id="MenuClose" (click)="onNoClick()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button *ngIf="data.changeDialog" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" id="MenuConfig">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="DeleteActive()" [mat-dialog-close]="data.id">
+      <mat-icon>delete</mat-icon>
+      delete
+    </button>
+  </mat-menu>
+
+
+
+  <div mat-dialog-content>
+
+    <!-- FORM NUEVO -->
+    <form *ngIf="data.changeDialog == false" id="contactForm" [formGroup]="filmFormNew"  novalidate (ngSubmit)="ClickEditFilm()">
+      <p>
+        <mat-form-field class="FormField">
+          <input 
+            matInput
+            type="text"
+            placeholder="Name Film"
+            formControlName="name"
+            class="form-control"
+            name="name" 
+            [errorStateMatcher]="matcher"
+            
+          >
+          <mat-hint></mat-hint>
+          <mat-error *ngIf="name">
+            Please enter a valid email address
+          </mat-error>
+            
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="FormField">
+          <textarea rows="4" cols="80" matInput placeholder="Description" formControlName="description" class="form-control"  name="text"></textarea>      
+        </mat-form-field>
+      </p>  
+    </form>
+  
+
+
+    <!-- FORM EDIT -->
+    <form *ngIf="data.changeDialog" id="contactForm" [formGroup]="filmFormEdit"  novalidate (ngSubmit)="ClickEditFilm()">
+      <p>
+        <mat-form-field class="FormField">
+          <input 
+            matInput
+            type="text"
+            placeholder="Name Film"
+            formControlName="name"
+            class="form-control"
+            name="name" 
+            [errorStateMatcher]="matcher"
+            
+          >
+          <mat-hint></mat-hint>
+          <mat-error *ngIf="name">
+            Please enter a valid email address
+          </mat-error>
+            
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="FormField">
+          <textarea rows="4" cols="80" matInput placeholder="Description" formControlName="description" class="form-control"  name="text"></textarea>      
+        </mat-form-field>
+      </p>  
+    </form>
+      
+  </div>
+  <div mat-dialog-actions>
+    <button *ngIf="data.changeDialog == false" mat-button [mat-dialog-close]="filmFormNew.value" [disabled]="filmFormNew.invalid" cdkFocusInitial >Nuevo</button>
+    <button *ngIf="data.changeDialog" mat-button [mat-dialog-close]="filmFormEdit.value" [disabled]="filmFormEdit.invalid" cdkFocusInitial >Editar</button>
+  </div>
+
+

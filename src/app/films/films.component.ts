@@ -15,6 +15,9 @@ export class FilmsComponent implements OnInit {
   
 
   public filmsTest$:  FilmInterface[];
+  public filmsTest1$:  FilmInterface[];
+  public dataFlimsTest: Observable<any[]>;
+
 
   films$: Observable<any[]>;
   star: Observable<any[]>;
@@ -32,17 +35,18 @@ export class FilmsComponent implements OnInit {
     this.likes$ = this.likeService.getCountAllFilmLike$(); 
     // this.filmsTest$ =  this.filmsService.getAllFilmsTest$();
 
-    this.filmsService.getAllFilmsTest$().subscribe(dataFilms => {
-      this.filmsTest$ = dataFilms;
-      console.log("DATAMODEL",dataFilms)
-      
+    this.filmsService.getAllFilmsTest$().subscribe(res => {
+       this.filmsTest$ = res;
+      console.log("DATAMODEL",this.filmsTest$)
     });
     
-    // console.log(this.filmsTest$);
+    console.log("this.filmsTest$",this.filmsTest$);
+    // console.log("this.filmsTest$",dataFilms);
     // console.log(this.films$);
   }
   getSearch(event: any){
     console.log(event); 
+    console.log("DATAMODEL 2",this.filmsTest$)
     this.films$ = this.filmsService.getSearchFilmForName$(event);
   }
 }

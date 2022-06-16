@@ -1,0 +1,7 @@
+
+.FormField{
+  display: inline; 
+  /* width: auto; */
+}
+#MenuConfig{position: relative;float: right;top: -50px;}
+#MenuClose{position: relative;float: right;top: -50px;}

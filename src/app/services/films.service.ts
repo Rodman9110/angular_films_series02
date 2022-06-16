@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+
 import { FilmInterface } from 'src/app/Models/Film';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -20,19 +22,29 @@ export class FilmsService {
   URL_ADD_FAVORITE_FILM ='http://localhost:8081/myFilms/postMyFavoriteFilm';
   URL_COUNT_MY_FILMS = 'http://localhost:8081/myFilms/getCountMyFilmsUser';
   URL_DELETE_MY_FILMS = 'http://localhost:8081/myFilms/DeleteMyFilm';
+  URL_EDIT_FILM = 'http://localhost:8081/apiFilm/postEditFilm'
+  URL_DELETE_FILM='http://localhost:8081/apiFilm/postDeleteFilm';
+  URL_ADD_ADV_FILM ='http://localhost:8081/apiFilm/postAddFilmAdv'
   
   URL_SEARCH_FILM_NAME = 'http://localhost:8081/apiFilm/getSearchFilmsForName';
   URL_ADD_FILM = 'http://localhost:8081/apiFilm/postAddFilm';
 
 
+  private _refresh$ = new Subject<void>()
   headers = new HttpHeaders;
   constructor(private http: HttpClient) {
     this.headers.append("Content-Type" ,"application/json");
    }
+
+  get refresh$(){
+    return this._refresh$;
+  }
+
+
    getAllFilmsTest$() :Observable<FilmInterface[]>{
     const url =this.URL_FILMS;
     console.log(url);
-    return this.http.get<FilmInterface[]>(url,{headers: this.headers});
+    return this.http.get<FilmInterface[]>(url,{headers: this.headers})
   }
 
 
@@ -86,5 +98,36 @@ export class FilmsService {
     console.log(film);
     return this.http.post<any>(url,film);
   }
+
+  postEditFilm$(film){
+    const url = this.URL_EDIT_FILM;
+    return this.http.post<any>(url,film)
+      .pipe(
+        tap(()=>{
+        this._refresh$.next();
+    }));
+  }
+
+  postAddFilmADV$(film){
+    const url = this.URL_ADD_ADV_FILM;
+    return this.http.post<any>(url,film)
+      .pipe(
+        tap(()=>{ 
+        this._refresh$.next();
+    }));
+  }
+
+  postDeleteFilm$(id_film){
+    const url = this.URL_DELETE_FILM;
+    return this.http.post<any>(url,id_film)
+    .pipe(
+      tap(()=>{
+      this._refresh$.next();
+    }));
+  }
+
+
+
+
 
 }

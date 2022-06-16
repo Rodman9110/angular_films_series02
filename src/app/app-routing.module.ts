@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'people', loadChildren: () => import('./people/people.module').then(m => m.PeopleModule) },
   { path: 'createItems', loadChildren: () => import('./create-items/create-items.module').then(m => m.CreateItemsModule) },
   { path: 'top', loadChildren: () => import('./top/top.module').then(m => m.TopModule) },
-  { path: 'actors', loadChildren: () => import('./actors/actors.module').then(m => m.ActorsModule) }
+  { path: 'actors', loadChildren: () => import('./actors/actors.module').then(m => m.ActorsModule) },
+  { path: 'listFilm', loadChildren: () => import('./list-films/list-films.module').then(m => m.ListFilmsModule) }
   ];
 
 @NgModule({
