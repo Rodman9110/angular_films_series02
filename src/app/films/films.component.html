@@ -7,15 +7,17 @@
 
 
 
+
+
 <app-films-list
 *ngIf="films$ | async as films; else empty"
 [films]="films"
 [likes]="likes$ | async"
 [star]="star | async"
-
 >
-
 </app-films-list>
+
+
 
 
  <ng-template #empty>

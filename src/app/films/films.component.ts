@@ -4,6 +4,7 @@ import { FilmsService } from '../services/films.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { LikeService } from '../services/like.service';
 import { FilmInterface } from 'src/app/Models/Film';
+import { TableColumn } from '../Models/TableColumn';
 
 @Component({
   selector: 'app-films',
@@ -23,6 +24,8 @@ export class FilmsComponent implements OnInit {
   star: Observable<any[]>;
   favoriteButtom: Observable<any>;
   likes$: Observable<any[]>;
+  filmsTableColumns: TableColumn[];
+  
   constructor(
     private filmsService: FilmsService,
     private authentication: AuthenticationService,
@@ -43,6 +46,14 @@ export class FilmsComponent implements OnInit {
     console.log("this.filmsTest$",this.filmsTest$);
     // console.log("this.filmsTest$",dataFilms);
     // console.log(this.films$);
+
+    this.filmsTableColumns =[
+      {name:"id",dataKey:"id",isSortable:true,position:"left"},
+      {name:"name",dataKey:"name",isSortable:true,position:"left"},
+      {name:"poster",dataKey:"poster",isSortable:true,position:"left"},
+      
+    ]
+
   }
   getSearch(event: any){
     console.log(event); 

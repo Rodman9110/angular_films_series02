@@ -1,0 +1,22 @@
+.mat-elevation-z8 {
+  width: 100%;
+  
+ 
+  
+}
+
+.mat-form-field {
+  font-size: 14px;
+ 
+}
+
+td, th {
+  width: 15%;
+}
+
+.cardTable{
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 10% ;
+    margin-top: 10%;
+}

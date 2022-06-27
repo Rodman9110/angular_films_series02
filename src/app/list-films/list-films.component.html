@@ -1,6 +1,23 @@
-<p>list-films works!</p>
 
 
+
+       <app-table-component
+       *ngIf="films$ | async as films"
+       [tableData]="films"
+       [DatosTable]="films"
+       [tableColumns]="filmsTableColumns"
+       [isFilterable]="true"
+       [isPageable]="true"
+       [paginationSizes]="[5,10,100]"
+       [defaultPageSize]="4"
+       [title]=title
+       >
+
+       </app-table-component>
+
+       <br>
+       <br>
+       <br>
  
        <app-film-table-list
        *ngIf="films$ | async as films"
@@ -12,3 +29,4 @@
        >        
        </app-film-table-list>
  
+       

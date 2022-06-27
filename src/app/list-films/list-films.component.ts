@@ -6,6 +6,7 @@ import { FilmsService } from '../services/films.service';
 import { ActorsService } from '../services/actors.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CompaniesService } from '../services/companies.service';
+import { TableColumn } from '../Models/TableColumn';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class ListFilmsComponent implements OnInit {
   films$: Observable<any[]>;
   companies$: Observable<any[]>;
   filmCompanies$: Observable<any[]>;
+  filmsTableColumns: TableColumn[];
+  title: string;
   
   subscription: Subscription;
 
@@ -35,7 +38,7 @@ export class ListFilmsComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-
+    this.title = "Tabla Reutilizable";
     this.films$ = this.filmsService.getAllFilms$();
     // this.companies$ = this.companiesService.getAllCompanies$();
     // this.filmCompanies$ = this.companiesService.getFilmsCompanies$();
@@ -48,6 +51,12 @@ export class ListFilmsComponent implements OnInit {
 
     });
 
+    this.filmsTableColumns =[
+      {name:"id",dataKey:"id",isSortable:true,position:"left"},
+      {name:"name",dataKey:"name",isSortable:true,position:"left"},
+      {name:"poster",dataKey:"poster_film",isSortable:true,position:"left"},
+      
+    ]
   }
 
   EditOrDeleteFilm(event): void{
